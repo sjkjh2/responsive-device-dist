@@ -3,6 +3,12 @@ $breakpoint-md:768px;
 $breakpoint-lg:1024px;
 $breakpoint-xl:1200px;
 
+@mixin contentBefore {
+  display:block;
+  font-size:100px;
+  @content;
+}
+
 @mixin smallDevice {
   @media screen and (max-width: $breakpoint-sm) {
     @content;
@@ -30,16 +36,36 @@ $breakpoint-xl:1200px;
 
 body {
   height: 100vh;
-  @include smallDevice {
-    background-color:tomato;
-  }
-  @include mediumDevice {
-    background-color:darkgoldenrod;
+  @include xlDevice() {
+    background-color:darkcyan;
+    &::before {
+      @include contentBefore {
+        content:"width : 1200px 이하";
+      }
+    }
   }
   @include largeDevice {
     background-color:aquamarine;
+    &::before {
+      @include contentBefore {
+        content:"width : 1024px 이하";
+      }
+    }
   }
-  @include xlDevice() {
-    background-color:darkcyan;
+  @include mediumDevice {
+    background-color:darkgoldenrod;
+    &::before {
+      @include contentBefore {
+        content:"width : 768px 이하";
+      }
+    }
+  }
+  @include smallDevice {
+    background-color:tomato;
+    &::before {
+      @include contentBefore {
+        content:"width : 480px 이하";
+      }
+    }
   }
 }
