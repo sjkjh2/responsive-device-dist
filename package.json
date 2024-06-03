@@ -11,5 +11,6 @@
   "devDependencies": {
     "sass": "^1.77.4",
     "vite": "^5.2.0"
-  }
+  },
+  "homepage": "https://sjkjh2.github.io/responsive-device/dist"
 }
