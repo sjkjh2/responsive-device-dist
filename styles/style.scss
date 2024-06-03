@@ -4,25 +4,25 @@ $breakpoint-lg:1024px;
 $breakpoint-xl:1200px;
 
 @mixin smallDevice {
-  @media screen and (min-width: $breakpoint-sm) {
+  @media screen and (max-width: $breakpoint-sm) {
     @content;
   }
 }
 
 @mixin mediumDevice {
-  @media screen and (min-width: $breakpoint-md) {
+  @media screen and (max-width: $breakpoint-md) {
     @content;
   }
 }
 
 @mixin largeDevice {
-  @media screen and (min-width: $breakpoint-lg) {
+  @media screen and (max-width: $breakpoint-lg) {
     @content;
   }
 }
 
 @mixin xlDevice {
-  @media screen and (min-width: $breakpoint-xl) {
+  @media screen and (max-width: $breakpoint-xl) {
     @content;
   }
 }
